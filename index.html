@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Izz Well</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <header class = "speaker-form-header">
+        <img src = "Logo.png" class = "logo" alt = "logo">
+        <h1>ALL IZ WELL SHAWARMA</h1>
+        <h3>Best Shawarma in Pampanga, 100% Pure Beef</h3>
+        <p>Want to take a bite? Fill-out the order form now!</p>
+    </header>
+
+    <form action = '' method = 'get' class = 'speaker-form'> 
+
+        <div class = 'form-row'>
+          <label for="Full-name">Your Name</label>
+          <input id="Full-name" name="full-name" type="text" placeholder="Kathryn Richards"/>
+        </div>
+        
+        <div class = 'form-row'>
+            <label for="Title">Your Age&nbsp;&nbsp;&nbsp;</label>
+            <input id="Title" type="text" placeholder="16"/>
+        </div>
+
+        <div class = 'form-row'>
+          <label for="Email">Your Email</label>
+          <input id="Email" type="email" placeholder="ihateudanielpadilla@example.com"/>
+        </div>
+
+        <div class='form-row'>
+            <label for='meat-type'>Type of Meat</label> <!--Substitute for Type of Cuisine-->
+            <div id = "dropdown">
+                <button class = "dropdown-toggle">
+                  <span>Menu</span>
+                </button>
+                  <ul class = "menu">
+                    <li class = "menu-item"><a href = "#">Beef Shawarma</a></li>
+                    <li class = "menu-item"><a href = "#">Chicken Shawarma</a></li>
+                    <li class = "menu-item dropdown">
+                      <a href = "#" class = "submenu-toggle">
+                        <span>Healthy Options</span>
+                      </a>
+                      <ul class = "submenu">
+                        <li class = "submenu-item"><a href = "#">Shawarma Salad</a></li>
+                      </ul>
+                    </li>
+        
+                    <li class = "menu-item"><a href = "#">Pizza Shawarma</a></li>
+                    <li class = "menu-item dropdown">
+                      <a href = "#" class = "submenu-toggle">
+                        <span>Drinks</span>
+                      </a>
+                      <ul class = "submenu">
+                        <li class = "submenu-item"><a href = "#">Halo-Halo</a></li>
+                        <li class = "submenu-item"><a href = "#">Mango Shake</a></li>
+                        <li class = "submenu-item"><a href = "#">Black Gulaman</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+        </div>
+            <fieldset class="pildset">
+              <legend>Mode of Payment</legend>
+              <input id="talk-type-1" name ="talk-type" type="radio" value="Cash">
+              <label for="talk-type-1" class="radio-label">Cash</label>
+    
+              <input id="talk-type-2" name ="talk-type" type="radio" value="Gcash">
+              <label for="talk-type-2" class="radio-label">Gcash</label>
+            </fieldset>
+
+            <fieldset class="pildset2">
+                <legend>For Dine-In or Dine-Out?</legend>
+                <input id="talk-type-1" name ="talk-type" type="radio" value="Dine In">
+                <label for="talk-type-1" class="radio-label">Dine In</label>
+      
+                <input id="talk-type-2" name ="talk-type" type="radio" value="Dine Out">
+                <label for="talk-type-2" class="radio-label">Dine Out</label>
+              </fieldset>
+        <div class="form-row">
+            <label for="Bio">Anything more? </label>
+            <textarea id="Bio" rows="8"></textarea>
+        </div>
+        <div class="button-container"> 
+            <a href="index.html" class="speaker-button">Place Order</a>
+          <a href="index.html" class="speaker-button">Clear Order</a>
+        </div>
+        <script src="./script.js"></script>
+</body>
+</html>
