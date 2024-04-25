@@ -1,24 +1,52 @@
-const dropdownToggle = document.querySelector(".dropdown-toggle");
+document.addEventListener("DOMContentLoaded", function() {
+    const dropdownItems = document.querySelectorAll(".drop-menu-item:not(.dynamic-dropdown), .submenu-item");
+    dropdownItems.forEach(item => {
+        item.addEventListener("click", (event) => {
+            event.preventDefault();
+            const selectedItem = item.textContent.trim();
+            document.querySelector(".dropdown-toggle > span").textContent = selectedItem;
+        });
+    });
 
-dropdownToggle.addEventListener("click", () => {
+    const placeOrderButton = document.querySelector("input[type='submit']");
+    placeOrderButton.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent form submission
+        const selectedMenuItem = document.querySelector(".dropdown-toggle > span").textContent.trim();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const age = document.getElementById("age").value.trim();
+        
+        if (selectedMenuItem === "Menu") {
+            alert("Please select an item from the menu.");
+        } else if (name === "" || email === "" || age === "") {
+            alert("Please fill in all the required fields.");
+        } else {
+            alert("Your order has been placed: " + selectedMenuItem);
+        }
+    });
 
-    event.preventDefault();
+    const dropdownToggle = document.querySelector(".dropdown-toggle");
+    dropdownToggle.addEventListener("click", (event) => {
+        event.preventDefault(); 
+        const dropdownMenu = document.querySelector("#dynamic-dropdown > .dynamic-dropdown-menu");
+        dropdownMenu.classList.toggle("open");
+        dropdownToggle.classList.toggle("open");
+    });
 
-    const dropdownMenu = document.querySelector("#dropdown > .menu");
-    dropdownMenu.classList.toggle("open");
-    dropdownToggle.classList.toggle("open");
-});
+    const submenuToggles = document.querySelectorAll(".submenu-toggle");
+    submenuToggles.forEach(toggle => {
+        toggle.addEventListener("click", (event) => {
+            event.preventDefault();
+            const submenu = toggle.nextElementSibling;
+            submenu.classList.toggle("open");
+        });
+    });
 
-const order = document.querySelector(".order");
-
-order.addEventListener("click", () => {
-
-    event.preventDefault();
-});
-
-const cancel = document.querySelector(".cancel");
-
-cancel.addEventListener("click", () => {
-
-    event.preventDefault();
+    const cancelButton = document.querySelector("input[type='reset']");
+    cancelButton.addEventListener("click", () => {
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("age").value = "";
+        document.querySelector(".dropdown-toggle > span").textContent = "Menu";
+    });
 });
